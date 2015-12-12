@@ -1,0 +1,6 @@
+# intellij specifics
+.idea/
+
+# client-side specifics
+node_modules/
+dist/
