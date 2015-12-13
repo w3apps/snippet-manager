@@ -7,7 +7,7 @@
 
 ## Running the app
 - In the root of the project run: `node node_modules/grunt-cli/bin/grunt build` - this creates the distribution files that the app requires  
-- In the root of the project run: `node Server.js` - this will start a dummy express server that servers the static files  
+- In the root of the project run: `node Server.js` - this will start a dummy express server that servers the static files and listens to port `3000`; the app can be accessed opening `http://localhost:3000/` in a web browser  
 
 ## Development
 - In the root of the project run: `node node_modules/grunt-cli/bin/grunt watch` - this will watch for any change to the files and build the distribution files on the fly    
@@ -16,6 +16,12 @@
 - In the root of the project run: `node node_modules/karma/bin/karma start` - this will run the unit tests on PhantomJS  
 
 ## Project info
+### General
+- The project is build using `AngularJS` as the MVC framework and `Angular Material` as the UI framework  
+- For code quality it uses `jshint` and `jscs`; the rules are based on Airbnb's style guide but with small changes  
+- `Grunt` is used as the build tool  
+- `Karma` is the unit tests runner and `Jasmine` is the testing framework  
+
 ### Files and Folders structure
 - `Server.js` - has the code for the dummy express server that servers the static files (any other server can be used)  
 - `grunt`/ - holds all the build tasks in separate files  
@@ -29,6 +35,7 @@
 
 ### Things to improve
 - Add some visual feedback when data is fetched from the server  
+- Improve navigation between pages  
 - Move all CSS to external files and add that to the build pipeline  
 - Add e2e tests  
 - Make the app production ready: minify files, reduce the static files requests etc.
