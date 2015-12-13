@@ -4,10 +4,15 @@
         <md-button class="md-raised md-primary" href="/add-snippet">Add Snippet</md-button>
     </div>
 
-    <div>
-        <div ng-repeat="(key, snippet) in listCtrl.snippetsList">
-            <a ng-href="/snippet-details/{{key}}">{{::snippet.author}}</a>
-            <p>{{::snippet.description | limitTo: listCtrl.descriptionLimit}}</p>
-        </div>
-    </div>
+    <md-list>
+        <md-list-item class="md-3-line" ng-repeat="(key, snippet) in listCtrl.snippetsList | orderBy: '-name'">
+            <div class="md-list-item-text">
+                <a ng-href="/snippet-details/{{key}}">{{::snippet.author}}</a>
+                <p style="max-width: 150px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" title="{{::snippet.description}}">
+                    {{::snippet.description}}
+                </p>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+    </md-list>
 </div>

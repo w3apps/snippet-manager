@@ -17,16 +17,19 @@
         self.saveSnippet = function () {
 
             // store the data on server
-            appResources.snippets.addSnippet(self.snippet);
+            appResources.snippets.addSnippet(self.snippet).$promise
+                .then(function () {
 
-            // show user friendly notification
-            $mdToast.show(
-                $mdToast.simple()
-                    .content('Your code snippet was added!')
-                    .hideDelay(3000)
-            );
+                    // show user friendly notification
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content('Your code snippet was added!')
+                            .hideDelay(3000)
+                    );
 
-            $location.path('/list');
+                    $location.path('/list');
+
+                });
 
         };
 

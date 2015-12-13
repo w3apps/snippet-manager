@@ -12,7 +12,7 @@
         var baseUrl = 'https://em-snippet.firebaseio.com/';
 
         return {
-            snippets: $resource(baseUrl + 'snippets.json', null, {
+            snippets: $resource(baseUrl + 'snippets/:snippetId.json', null, {
 
                 addSnippet: {
                     method: 'POST',
@@ -22,6 +22,11 @@
                 getSnippets: {
                     method: 'GET',
                     cache: false
+                },
+
+                getSnippetDetails: {
+                    method: 'GET',
+                    cache: true
                 }
 
             })

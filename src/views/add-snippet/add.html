@@ -16,6 +16,9 @@
             <input type="text" ng-model="addCtrl.snippet.author">
         </md-input-container>
 
-        <md-button class="md-raised md-primary" ng-click="addCtrl.saveSnippet()">Save</md-button>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised md-primary" ng-click="addCtrl.saveSnippet()">Save</md-button>
+            <md-button class="md-raised md-primary" ng-href="/list">Cancel</md-button>
+        </div>
     </div>
 </div>
