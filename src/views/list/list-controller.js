@@ -13,7 +13,6 @@
 
         // holds the resolved snippets list
         self.snippetsList = resolvedSnippetsList;
-        console.log(self.snippetsList);
         self.descriptionLimit = 30; // the limit of characters for the description
 
     }
