@@ -9,15 +9,25 @@
 
     function configRoutes($routeProvider) {
 
-        console.log('aaa');
-
         $routeProvider
 
-            // Sniptes List route
+            // snippets List
             .when('/list', {
-                template: '/views/list/list.html',
+                templateUrl: 'views/list/list.html',
                 controller: 'SnippetListController',
-                controllerAs: 'listCtrl'
+                controllerAs: 'listCtrl',
+                resolve: {
+                    resolvedSnippetsList: ['appResources', function (appResources) {
+                        return appResources.snippets.getSnippets();
+                    }]
+                }
+            })
+
+            // Add snippet
+            .when('/add-snippet', {
+                templateUrl: 'views/add-snippet/add.html',
+                controller: 'AddSnippetController',
+                controllerAs: 'addCtrl'
             })
 
             // if no route is matched go to the List

@@ -1,10 +1,10 @@
 ;(function (angular) {
     'use strict';
 
-    console.log('eee');
-
     angular.module('snippetManager', [
         'ngRoute',
+        'ngResource',
+        'ngMaterial',
 
         'snippetManager.views'
     ]);

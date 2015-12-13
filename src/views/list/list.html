@@ -1,3 +1,13 @@
 <div>
-    aaaa bbb
+    <div layout="row" layout-align="space-between center">
+        <h3>Code snippets list</h3>
+        <md-button class="md-raised md-primary" href="/add-snippet">Add Snippet</md-button>
+    </div>
+
+    <div>
+        <div ng-repeat="(key, snippet) in listCtrl.snippetsList">
+            <a ng-href="/snippet-details/{{key}}">{{::snippet.author}}</a>
+            <p>{{::snippet.description | limitTo: listCtrl.descriptionLimit}}</p>
+        </div>
+    </div>
 </div>

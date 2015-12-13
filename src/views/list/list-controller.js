@@ -5,8 +5,17 @@
         .module('snippetManager.views')
         .controller('SnippetListController', SnippetListController);
 
-    function SnippetListController() {
-        console.log('test 23');
+    SnippetListController.$inject = ['resolvedSnippetsList'];
+
+    function SnippetListController(resolvedSnippetsList) {
+
+        var self = this;
+
+        // holds the resolved snippets list
+        self.snippetsList = resolvedSnippetsList;
+        console.log(self.snippetsList);
+        self.descriptionLimit = 30; // the limit of characters for the description
+
     }
 
 })(window.angular);

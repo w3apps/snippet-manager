@@ -1,0 +1,21 @@
+<div>
+    <h3>Add new snippet</h3>
+    <div>
+        <md-input-container class="md-block">
+            <label>Code</label>
+            <textarea ng-model="addCtrl.snippet.code"></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Description</label>
+            <textarea ng-model="addCtrl.snippet.description"></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Author</label>
+            <input type="text" ng-model="addCtrl.snippet.author">
+        </md-input-container>
+
+        <md-button class="md-raised md-primary" ng-click="addCtrl.saveSnippet()">Save</md-button>
+    </div>
+</div>
